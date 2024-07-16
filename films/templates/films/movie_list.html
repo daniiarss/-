@@ -1,0 +1,28 @@
+<!-- films/templates/films/movie_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie List</title>
+</head>
+<body>
+    <h1>Movie List</h1>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                {{ movie.name }} - Directed by {{ movie.director }}
+                (Duration: {{ movie.duration }} minutes)
+                {% if movie.is_active %}
+                    - Active
+                {% else %}
+                    - Inactive
+                {% endif %}
+                <br>
+                Created: {{ movie.created|date:"Y-m-d H:i:s" }} |
+                Updated: {{ movie.updated|date:"Y-m-d H:i:s" }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
