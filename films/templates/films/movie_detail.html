@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ movie.name }}</title>
+</head>
+<body>
+    <h1>{{ movie.name }}</h1>
+    <p>Duration: {{ movie.duration }} minutes</p>
+    <p>Director: {{ movie.director }}</p>
+    <p>Is Active: {{ movie.is_active }}</p>
+    <p>Created: {{ movie.created }}</p>
+    <p>Updated: {{ movie.updated }}</p>
+    <a href="{% url 'movie_list' %}">Back to list</a>
+</body>
+</html>
